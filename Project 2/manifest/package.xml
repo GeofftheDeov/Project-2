@@ -36,5 +36,9 @@
         <members>*</members>
         <name>CustomObject</name>
     </types>
+    <type>
+        <members>*</members>
+        <name>Flow</name>
+    </type>
     <version>46.0</version>
 </Package>

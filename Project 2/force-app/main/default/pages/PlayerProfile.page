@@ -33,12 +33,11 @@
     </apex:form>
 
     <apex:pageBlock Title="Quiz Taken">
-            <apex:relatedlist list="Quizzes__r"/>
+            <!--<apex:relatedlist list="Quizzes__r"/>-->
     </apex:pageBlock>
 
     <apex:form>
         <apex:pageBlock Title="Your Average Quiz Score">
-            <apex:outputField value="{!account.QuizAverage__c}" />
         </apex:pageBlock>
     </apex:form>
 
