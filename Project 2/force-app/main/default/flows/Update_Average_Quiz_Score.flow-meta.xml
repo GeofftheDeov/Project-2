@@ -19,10 +19,40 @@
             <name>myRule_1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_1</leftValueReference>
-                <operator>EqualTo</operator>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Account</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Account__c</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>null</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -47,10 +77,40 @@
             <name>myRule_4</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>formula_myRule_4</leftValueReference>
-                <operator>EqualTo</operator>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideReferenceTo</name>
+                    <value>
+                        <stringValue>Account</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>String</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>ID</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.Account__c</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>null</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -67,7 +127,7 @@
                 <stringValue>[Quiz__c].Account__c.QuizNum__c +1</stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_2_myRule_1_A1_5572609372</name>
+        <name>formula_2_myRule_1_A1_0571309320</name>
         <dataType>Number</dataType>
         <expression>{!myVariable_current.Account__r.QuizNum__c} +1</expression>
         <scale>18</scale>
@@ -79,22 +139,12 @@
                 <stringValue>([Quiz__c].Account__c.Quiz_Average__c *([Quiz__c].Account__c.QuizNum__c -1)+[Quiz__c].Score__c )/[Quiz__c].Account__c.QuizNum__c </stringValue>
             </value>
         </processMetadataValues>
-        <name>formula_5_myRule_4_A1_8099192370</name>
+        <name>formula_5_myRule_4_A1_8679715097</name>
         <dataType>Number</dataType>
         <expression>({!myVariable_current.Account__r.Quiz_Average__c} *({!myVariable_current.Account__r.QuizNum__c} -1)+{!myVariable_current.Score__c} )/{!myVariable_current.Account__r.QuizNum__c}</expression>
         <scale>18</scale>
     </formulas>
-    <formulas>
-        <name>formula_myRule_1</name>
-        <dataType>Boolean</dataType>
-        <expression>true</expression>
-    </formulas>
-    <formulas>
-        <name>formula_myRule_4</name>
-        <dataType>Boolean</dataType>
-        <expression>true</expression>
-    </formulas>
-    <interviewLabel>Update_Average_Quiz_Score-1_InterviewLabel</interviewLabel>
+    <interviewLabel>Update_Average_Quiz_Score-3_InterviewLabel</interviewLabel>
     <label>Update Average Quiz Score</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -199,7 +249,7 @@
             </processMetadataValues>
             <field>QuizNum__c</field>
             <value>
-                <elementReference>formula_2_myRule_1_A1_5572609372</elementReference>
+                <elementReference>formula_2_myRule_1_A1_0571309320</elementReference>
             </value>
         </inputAssignments>
         <object>Account</object>
@@ -279,13 +329,13 @@
             </processMetadataValues>
             <field>Quiz_Average__c</field>
             <value>
-                <elementReference>formula_5_myRule_4_A1_8099192370</elementReference>
+                <elementReference>formula_5_myRule_4_A1_8679715097</elementReference>
             </value>
         </inputAssignments>
         <object>Account</object>
     </recordUpdates>
     <startElementReference>myDecision</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>myVariable_current</name>
         <dataType>SObject</dataType>

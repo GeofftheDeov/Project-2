@@ -14,6 +14,12 @@
     <body>
         
     <div style="text-align:center"><h1>Quiz Time</h1></div>
+
+    <apex:form>
+        <apex:pageblock>
+            <div><apex:outputField value="{!Quiz[0].name}" /></div>
+        </apex:pageblock>
+    </apex:form>
         
         <apex:form >
             <div align="left">
@@ -31,7 +37,7 @@
 
         	<apex:pageBlock >
             	<apex:pageBlockSection >
-                    <apex:outputText style="font-size:20pt" value="What ever question it pulls from the questions bank."/>
+                    <apex:outputText style="font-size:20pt" value="{!Questions[0].name}"/>
                 </apex:pageBlockSection>
                 
                 <apex:selectRadio layout="pageDirection">
