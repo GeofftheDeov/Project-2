@@ -1,0 +1,35 @@
+<apex:component >
+  <style>
+      ul li{
+        padding-left:44px;
+}  
+      ul {
+        margin: 0;
+      	background-color: #000000;
+      	padding:5px;
+}
+        li a{
+        color: white;
+        text-align: center;
+        padding: 5px;
+      	margin-left:12%;
+}
+      li{
+      display: inline;
+      }
+      li a:hover {
+  background-color: #ff8c00;
+      color: white;
+      
+}
+    </style> 
+    
+    <ul>
+        <!--put in href the link to the page-->
+  <li><a href="">Quizzes</a></li>
+  <li><a href="">Profile</a></li>
+  <li><a href="">Leaderboard</a></li>
+  <li><a href="">Teams</a></li>  
+</ul>
+    
+</apex:component>
