@@ -1,0 +1,6 @@
+<apex:page>
+    <apex:form>
+            <c:QuizList />
+    </apex:form>
+
+</apex:page>

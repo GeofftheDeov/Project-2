@@ -1,0 +1,9 @@
+<apex:component controller="VisualForceQuizListController">
+    
+        <apex:dataTable value="{!QuizList}" var="QuizItem">
+            <apex:column>
+                <apex:commandLink value="QuizItem.Name" action="pickQuiz(QuizItem.Name)"></apex:commandLink>
+            </apex:column>
+        </apex:dataTable>
+    
+</apex:component>

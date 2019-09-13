@@ -1,0 +1,14 @@
+<apex:component controller="TeamLeaderboardController">
+        <apex:dataTable value="{!TeamList}" var="Team">
+            <apex:column>
+                <apex:outputText value="Team.Name" />
+            </apex:column>
+            <apex:column>
+                    <apex:dataTable value="{!Memberlist}" var="Member">
+                            <apex:column>
+                                <apex:outputText value="Member.Name" />
+                            </apex:column>
+                        </apex:dataTable>
+            </apex:column>
+        </apex:dataTable>
+</apex:component>

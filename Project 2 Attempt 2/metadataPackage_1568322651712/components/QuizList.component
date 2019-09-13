@@ -1,0 +1,8 @@
+<apex:component standardController="Quiz" recordSetVar="QuizList" extensions="VisualForceQuizController">
+    <apex:dataTable value="{!QuizList}" var="QuizItem">
+        <apex:column>
+            <apex:commandLink value="QuizItem.Name" action="{!pickQuiz}"></apex:outputLink>
+        </apex:column>
+    </apex:dataTable>
+
+</apex:component>

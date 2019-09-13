@@ -1,3 +1,0 @@
-<apex:component>
-    <chatter:feed entityId="{!$User.Id}"/> 
-</apex:component>
