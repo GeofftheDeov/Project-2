@@ -11,17 +11,19 @@
     </style>
     
     </head>
+
     <body>
         
     <div style="text-align:center"><h1>Quiz Time</h1></div>
 
-    <apex:form>
-        <apex:pageblock>
-            <div><apex:outputField value="{!Quiz[0].name}" /></div>
-        </apex:pageblock>
-    </apex:form>
-        
+    <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:outputText style="font-size:20pt" value="{!Quiz.name}"/>
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+
         <apex:form >
+            <!--
             <div align="left">
                 <apex:commandButton value="1" action="!Q1"/>
                 <apex:commandButton value="2" action="!Q2"/>
@@ -34,20 +36,22 @@
                 <apex:commandButton value="9" action="!Q9"/>
                 <apex:commandButton value="10" action="!Q10"/>
                 </div>
+            -->
 
-        	<apex:pageBlock >
+        	<apex:pageBlock id="QuizSection">
             	<apex:pageBlockSection >
-                    <apex:outputText style="font-size:20pt" value="{!Questions[0].name}"/>
+                    <apex:outputText style="font-size:20pt" value="{!Questions.name}"/>
                 </apex:pageBlockSection>
                 
-                <apex:selectRadio layout="pageDirection">
+                
+                <apex:selectRadio layout="pageDirection" value="{!choice}">
                     <apex:selectOptions value="{!Answers}"/>
                     </apex:selectRadio>
-
-                
-                <div align="right">
-                    <apex:commandButton value="submit" action="!submit"/>
-                </div>
+                    <div align="right">
+                            <!-- <apex:commandButton value="previous" action="{!previous}" reRender="QuizSection"/> -->
+                            <apex:commandButton value="next" action="{!next}" reRender="QuizSection" disabled="{!Nxt}"/>
+                            <apex:commandButton value="submit" action="{!submit}" reRender="QuizSection" disabled="{!Lst}"/>
+                    </div>
             </apex:pageBlock>
         </apex:form>
         

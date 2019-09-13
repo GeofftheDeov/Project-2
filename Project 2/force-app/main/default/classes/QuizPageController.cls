@@ -1,8 +1,20 @@
+  
 public class QuizPageController {
+
+public string choice {get;set;}
+
+    integer count=0;
+    integer limitSize=10;
+    integer score=0;
+    integer totalRecs=0;
+
+    list<account> newAcc=[SELECT Id FROM account WHERE OwnerId = :UserInfo.getUserID() LIMIT 1];
 
       public QuizPageController() {
         q = [SELECT id, Name FROM Quiz__c];
-        ques = [SELECT Name ,A__c,B__c,C__c,D__c,CorrectAnswer__c FROM Questions__c WHERE Quiz__c IN :q LIMIT 1 OFFSET 0 ];
+        ques = [SELECT Name ,A__c,B__c,C__c,D__c,CorrectAnswer__c FROM Questions__c WHERE Quiz__c IN :q LIMIT :limitSize OFFSET :count ];
+        totalrecs=ques.size();
+
         
     }
 
@@ -10,29 +22,29 @@ public class QuizPageController {
        public list<questions__c> ques;
 
 
-    integer count=0;
-    integer limitSize=10;
  
   
  
-    public list<Quiz__c> getQuiz() {
-        return q;
+    public Quiz__c getQuiz() {
+        return q[0];
     }
     
-    public list<Questions__c> getQuestions(){
-        return ques;
+    public Questions__c getQuestions(){
+        return ques[count];
         
 
     }
 
+    
     public List<SelectOption> getAnswers() {
         List<SelectOption> options = new List<SelectOption>(); 
-        options.add(new SelectOption('A',Ques[0].a__c)); 
-        options.add(new SelectOption('B',Ques[0].b__c)); 
-        options.add(new SelectOption('C',Ques[0].c__c)); 
-        options.add(new SelectOption('D',Ques[0].d__c)); 
+        options.add(new SelectOption('A',Ques[count].a__c)); 
+        options.add(new SelectOption('B',Ques[count].b__c)); 
+        options.add(new SelectOption('C',Ques[count].c__c)); 
+        options.add(new SelectOption('D',Ques[count].d__c)); 
         return options; 
     }
+    
 
     
     public PageReference Q1(){
@@ -40,11 +52,49 @@ public class QuizPageController {
         return null;
     }
 
-    
+    public PageReference next(){
+        if(choice == ques[count].CorrectAnswer__c){
+            score++;
+
+        System.debug('score:'+score);
+        }
+
+        count++;
+        return null;
+    }
+
+        public Boolean getNxt() {
+        if(count> totalRecs-2)
+       		return true;
+     	else
+       		return false;     
+    }
+
+        public Boolean getLst(){
+            if(count==TotalRecs-1){
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+    public PageReference previous(){
+        count--;
+        return null;
+    }
 
     public void submit(){
+        if(choice == ques[count].CorrectAnswer__c){
+            score++;
+        }
+        System.debug('score:'+score);
+        System.debug('final'+ques.size());
+        AccountQuiz__c newAccQuiz = new AccountQuiz__c(name='test', Account__c=newAcc[0].Id, Quiz__c=q[0].id,Score__c=((score*100/ques.size())));
+        insert newAccQuiz;
+
         
     }
+    
 
 
 
