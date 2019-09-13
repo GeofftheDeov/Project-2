@@ -1,0 +1,21 @@
+<apex:page controller="LeaderboardController">
+        <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"/>
+            <style type="text/css">  
+            h1{
+                        font-family: 'Dancing Script', cursive;
+                        font-size:80px;
+                
+                      }
+            </style>
+            
+            </head>
+
+
+            <body>
+                <div style="text-align:center"><h1>Leaderboard</h1></div>
+
+            </body>
+
+</apex:page>

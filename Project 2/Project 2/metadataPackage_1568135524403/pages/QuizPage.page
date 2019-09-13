@@ -1,0 +1,50 @@
+<apex:page controller="QuizPageController">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"/>
+    <style type="text/css">  
+    h1{
+                font-family: 'Dancing Script', cursive;
+                font-size:80px;
+        
+              }
+    </style>
+    
+    </head>
+    <body>
+        
+    <div style="text-align:center"><h1>Quiz Time</h1></div>
+        
+        <apex:form >
+            <div align="left">
+                <apex:commandButton value="1" action="!Q1"/>
+                <apex:commandButton value="2" action="!Q2"/>
+                <apex:commandButton value="3" action="!Q3"/>
+                <apex:commandButton value="4" action="!Q4"/>
+                <apex:commandButton value="5" action="!Q5"/>
+                <apex:commandButton value="6" action="!Q6"/>
+                <apex:commandButton value="7" action="!Q7"/>
+                <apex:commandButton value="8" action="!Q8"/>
+                <apex:commandButton value="9" action="!Q9"/>
+                <apex:commandButton value="10" action="!Q10"/>
+                </div>
+            
+        	<apex:pageBlock >
+            	<apex:pageBlockSection >
+                    <apex:outputText style="font-size:20pt" value="What ever question it pulls from the questions bank."/>
+                </apex:pageBlockSection>
+                <apex:outputText >answer1</apex:outputText><br/>
+                <apex:outputText >answer2</apex:outputText><br/>
+                <apex:outputText >answer3</apex:outputText><br/>
+                <apex:outputText >answer4</apex:outputText><br/>
+                
+                <div align="right">
+                    <apex:commandButton value="submit" action="!submit"/>
+                </div>
+            </apex:pageBlock>
+        </apex:form>
+        
+        
+        </body>
+    
+</apex:page>

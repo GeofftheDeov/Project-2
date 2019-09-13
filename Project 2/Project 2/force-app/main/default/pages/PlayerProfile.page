@@ -1,0 +1,46 @@
+<apex:page standardController="account">
+        <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+            <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet"/>
+            <style type="text/css">  
+            h1{
+                        font-family: 'Dancing Script', cursive;
+                        font-size:80px;
+                
+                      }
+            </style>
+            
+            </head>
+            <body>
+                <div style="text-align:center"><h1>Profile</h1></div>
+
+    <apex:form>
+        <apex:pageBlock Title="Account Name">
+            <apex:pageBlockSection>
+                <apex:outputField value="{!account.name}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+        <apex:pageBlock Title="Other Info">
+            <apex:pageBlockSection>
+                <apex:outputField value="{!account.description}" />
+                <apex:outputField value="{!account.phone}" />
+                <apex:outputField value="{!account.type}" />
+                <apex:outputField value="{!account.accountNumber}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+
+    <apex:pageBlock Title="Quiz Taken">
+            <!--<apex:relatedlist list="Quizzes__r"/>-->
+    </apex:pageBlock>
+
+    <apex:form>
+        <apex:pageBlock Title="Your Average Quiz Score">
+        </apex:pageBlock>
+    </apex:form>
+
+</body>
+
+</apex:page>
