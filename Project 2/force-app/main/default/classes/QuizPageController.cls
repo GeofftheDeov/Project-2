@@ -11,7 +11,7 @@ public string choice {get;set;}
     list<account> newAcc=[SELECT Id FROM account WHERE OwnerId = :UserInfo.getUserID() LIMIT 1];
 
       public QuizPageController() {
-        q = [SELECT id, Name FROM Quiz__c];
+        q = [SELECT id, Name FROM Quiz__c LIMIT 1];
         ques = [SELECT Name ,A__c,B__c,C__c,D__c,CorrectAnswer__c FROM Questions__c WHERE Quiz__c IN :q LIMIT :limitSize OFFSET :count ];
         totalrecs=ques.size();
 
@@ -60,6 +60,7 @@ public string choice {get;set;}
         }
 
         count++;
+        choice=null;
         return null;
     }
 

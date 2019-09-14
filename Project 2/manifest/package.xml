@@ -37,5 +37,28 @@
         <members>*</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>Account.AvgScore__c</members>
+        <members>Account.TotalScore__c</members>
+        <members>Account.Ranking__c</members>
+        <members>Account.NumQuizzes__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
+        <types>
+        <members>*</members>
+        <name>CustomTab</name>
+        </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
     <version>46.0</version>
 </Package>
