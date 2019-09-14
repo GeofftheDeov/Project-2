@@ -14,7 +14,7 @@ public with sharing class Team {
         score = 0;
 
         //get the id of the users in the chatter group
-        List<CollaborationGroupMember> teamMemberUsers = [SELECT userid FROM CollaborationGroupMember WHERE CollaborationGroupid= :Chattergroup ]
+        List<CollaborationGroupMember> teamMemberUsers = [SELECT MemberId FROM CollaborationGroupMember WHERE CollaborationGroupid= :Chattergroup ];
         
         //for each user, find their account, and add to the list of team members
         for(CollaborationGroupMember cgm: teamMemberUsers)

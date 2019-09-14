@@ -4,21 +4,22 @@ public with sharing class TeamLeaderboardController {
    
     public TeamLeaderboardController() {
        
-        List<CollaborationGroup> Chattergroups = [SELECT name FROM CollaborationGroup WHERE CollaborationGroupType = 'Private'];
+        List<CollaborationGroup> Chattergroups = [SELECT name FROM CollaborationGroup WHERE CollaborationType = 'Private'];
         for(CollaborationGroup cg: Chattergroups)
         {
             Team getTeam = new Team(cg);
             TeamList.add(getTeam);
         }
 
-        sort(this);
+        sort(TeamList);
     }  
 
    
-    public static Team[] sortArray( Team[] passedTeam) {
+    public static Team[] sortArray( List<Team> passedTeam) {
 
-        Integer i, key, j;
+        Integer i, j;
 
+        Team key;
 
         //Go through each position in the array
         for(i = 0; i<passedTeam.size(); i++){
