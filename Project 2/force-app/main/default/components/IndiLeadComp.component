@@ -1,0 +1,23 @@
+<apex:component controller="indiLeadController">
+
+
+<apex:pageBlock title="Your rank!">
+    <apex:pageBlockTable value="{!myAccount}" var="a">
+        <apex:column value="{!a.ranking__c}" />
+        <apex:column value="{!a.name}" />
+        <apex:column value="{!a.points__c}" />
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+
+<apex:pageBlock title="Top players">
+    <apex:pageBlockTable value="{!Account}" var="a">
+        <apex:column value="{!a.ranking__c}" />
+        <apex:column value="{!a.name}" />
+        <apex:column value="{!a.points__c}" />
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+
+
+</apex:component>

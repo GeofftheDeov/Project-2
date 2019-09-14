@@ -16,6 +16,9 @@
             <body>
                 <div style="text-align:center"><h1>Leaderboard</h1></div>
 
+                <c:IndiLeadComp/>
+
+
             </body>
 
 </apex:page>
